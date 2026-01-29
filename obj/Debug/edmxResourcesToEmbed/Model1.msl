@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище InfoSecEventsModelContainer" CdmEntityContainer="InfoSecEventsEntities">
+    <EntitySetMapping Name="Cтраны">
+      <EntityTypeMapping TypeName="InfoSecEventsModel.Cтраны">
+        <MappingFragment StoreEntitySet="Cтраны">
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+          <ScalarProperty Name="CodeLetter" ColumnName="CodeLetter" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Активности">
+      <EntityTypeMapping TypeName="InfoSecEventsModel.Активности">
+        <MappingFragment StoreEntitySet="Активности">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="Moderator" ColumnName="Moderator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Города">
+      <EntityTypeMapping TypeName="InfoSecEventsModel.Города">
+        <MappingFragment StoreEntitySet="Города">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Мероприятия">
+      <EntityTypeMapping TypeName="InfoSecEventsModel.Мероприятия">
+        <MappingFragment StoreEntitySet="Мероприятия">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="NumberOfDays" ColumnName="NumberOfDays" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="WinnerID" ColumnName="WinnerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Пол">
+      <EntityTypeMapping TypeName="InfoSecEventsModel.Пол">
+        <MappingFragment StoreEntitySet="Пол">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Пользователи">
+      <EntityTypeMapping TypeName="InfoSecEventsModel.Пользователи">
+        <MappingFragment StoreEntitySet="Пользователи">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhotoPath" ColumnName="PhotoPath" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Роли">
+      <EntityTypeMapping TypeName="InfoSecEventsModel.Роли">
+        <MappingFragment StoreEntitySet="Роли">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ЖюриАктивностей">
+      <EntityTypeMapping TypeName="InfoSecEventsModel.ЖюриАктивностей">
+        <MappingFragment StoreEntitySet="ЖюриАктивностей">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="JuryID" ColumnName="JuryID" />
+          <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

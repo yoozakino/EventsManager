@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="EventsManager.ActivitiesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <TextBox x:Name="SearchBox" Width="260" Margin="0,0,10,0"
+                     VerticalContentAlignment="Center"
+                     TextChanged="SearchBox_TextChanged"/>
+
+            <ComboBox x:Name="EventFilterBox" Width="280" Margin="0,0,10,0"
+                      DisplayMemberPath="Name"
+                      SelectionChanged="EventFilterBox_SelectionChanged"/>
+
+            <ComboBox x:Name="SortBox" Width="220"
+                      SelectionChanged="SortBox_SelectionChanged">
+                <ComboBoxItem Content="Время: по возрастанию" Tag="ASC" IsSelected="True"/>
+                <ComboBoxItem Content="Время: по убыванию" Tag="DESC"/>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,10">
+            <Button Content="Добавить активность" Width="180" Click="AddActivity_Click" Margin="0,0,10,0"/>
+            <Button Content="Удалить" Width="120" Click="DeleteActivity_Click"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="2" x:Name="ActivitiesGrid"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  MouseDoubleClick="ActivitiesGrid_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Мероприятие" Binding="{Binding Мероприятия.Name}" Width="*"/>
+                <DataGridTextColumn Header="День" Binding="{Binding Day}" Width="70"/>
+                <DataGridTextColumn Header="Время" Binding="{Binding StartTime}" Width="120"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="2*"/>
+                <DataGridTextColumn Header="Модератор (ID)" Binding="{Binding Moderator}" Width="130"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
