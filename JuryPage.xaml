@@ -10,7 +10,6 @@
             <ColumnDefinition Width="460"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Мои активности -->
         <Border Background="White" CornerRadius="10" Padding="12">
             <Grid>
                 <Grid.RowDefinitions>
@@ -46,7 +45,6 @@
             </Grid>
         </Border>
 
-        <!-- Победитель -->
         <Border Grid.Column="2" Background="White" CornerRadius="10" Padding="12">
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                 <StackPanel>
