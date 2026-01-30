@@ -154,8 +154,6 @@ namespace EventsManager
 
                 if (item == null) return;
 
-                // Раньше была many-to-many и можно было item.Пользователи.Any().
-                // Теперь связь через entity ЖюриАктивностей: проверяем строки по ActivityID. [file:4]
                 bool hasJury = db.ЖюриАктивностей.Any(x => x.ActivityID == item.ID);
 
                 if (hasJury)
