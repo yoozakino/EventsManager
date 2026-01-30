@@ -10,7 +10,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Левая панель -->
         <Border Background="White" CornerRadius="10" Padding="12">
             <Grid>
                 <Grid.RowDefinitions>
@@ -67,7 +66,6 @@
             </Grid>
         </Border>
 
-        <!-- Правая панель -->
         <Border Grid.Column="2" Background="White" CornerRadius="10" Padding="12">
             <Grid>
                 <Grid.RowDefinitions>
