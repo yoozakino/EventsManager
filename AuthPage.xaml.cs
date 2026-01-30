@@ -66,7 +66,6 @@ namespace EventsManager
             {
                 using (var db = new InfoSecEventsEntities())
                 {
-                    // ВАЖНО: грузим роль вместе с пользователем
                     LoggedUser = await db.Пользователи
                         .AsNoTracking()
                         .Include(u => u.Роли)
