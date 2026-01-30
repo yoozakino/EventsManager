@@ -43,7 +43,6 @@ namespace EventsManager
             {
                 using (var db = new InfoSecEventsEntities())
                 {
-                    // ЖюриАктивностей(ActivityID, JuryID) -> Активности(EventID...). [file:4]
                     _items = await db.ЖюриАктивностей
                         .Where(ja => ja.JuryID == myId)
                         .Select(ja => ja.Активности)
@@ -102,7 +101,6 @@ namespace EventsManager
                     int myId = Session.CurrentUser != null ? Session.CurrentUser.ID : 0;
                     const int juryRoleId = 0;
 
-                    // Кандидаты: все НЕ жюри (RoleID != 0) и не текущий пользователь. [file:4]
                     var candidates = await db.Пользователи
                         .Where(u => u.ID != myId)
                         .Where(u => u.RoleID != juryRoleId)
@@ -175,7 +173,6 @@ namespace EventsManager
                     await db.SaveChangesAsync();
                 }
 
-                // Перечитаем и снова выделим WinnerID
                 await LoadRightPanelAsync();
 
                 MessageBox.Show("Победитель назначен.", "Жюри",
