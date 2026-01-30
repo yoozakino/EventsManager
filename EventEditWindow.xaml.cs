@@ -45,7 +45,6 @@ namespace EventsManager
                     NameBox.Text = ev.Name ?? "";
                     DateBox.Text = ev.Date ?? "";
 
-                    // город
                     foreach (var item in CityBox.Items)
                     {
                         var c = item as Города;
@@ -104,17 +103,15 @@ namespace EventsManager
                 else
                 {
                     target = new Мероприятия();
-                    target.ID = GetNextEventId(db); // важно, если ID не identity [file:4]
+                    target.ID = GetNextEventId(db); 
                 }
 
                 target.Name = NameBox.Text.Trim();
                 target.CityID = city.ID;
                 target.Date = DateBox.Text.Trim();
 
-                // В БД у тебя есть NumberOfDays (int) — при необходимости добавь поле на форму.
                 if (!_eventId.HasValue)
                 {
-                    // минимально: 1 день по умолчанию
                     target.NumberOfDays = 1;
                 }
 
