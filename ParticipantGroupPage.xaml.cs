@@ -36,7 +36,6 @@ namespace EventsManager
 
             _init = true;
 
-            // Заполняем из профиля (это строки в БД) [file:4]
             UserEventBox.Text = Session.CurrentUser?.Event ?? "";
             UserDirectionBox.Text = Session.CurrentUser?.Direction ?? "";
 
@@ -72,7 +71,6 @@ namespace EventsManager
         {
             if (_init) return;
 
-            // Удобство: при выборе из базы — подставим название в поле "Мероприятие"
             var ev = EventPicker.SelectedItem as Мероприятия;
             if (ev != null)
                 UserEventBox.Text = ev.Name ?? "";
@@ -117,7 +115,6 @@ namespace EventsManager
 
                 db.SaveChanges();
 
-                // обновляем сессию, чтобы на других экранах тоже было актуально
                 Session.CurrentUser.Event = newEvent;
                 Session.CurrentUser.Direction = newDirection;
             }
