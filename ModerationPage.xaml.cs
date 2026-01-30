@@ -46,7 +46,6 @@ namespace EventsManager
             {
                 int myId = Session.CurrentUser.ID;
 
-                // В Активности есть поле Moderator (int) [file:4]
                 _myActivities = await db.Активности
                     .Where(a => a.Moderator == myId)
                     .OrderBy(a => a.EventID)
@@ -57,7 +56,6 @@ namespace EventsManager
 
             MyActivitiesGrid.ItemsSource = _myActivities;
 
-            // сброс правой панели
             _selected = null;
             NameBox.Text = "";
             DayBox.Text = "";
@@ -90,7 +88,6 @@ namespace EventsManager
                 return;
             }
 
-            // валидация
             var newName = (NameBox.Text ?? "").Trim();
             if (string.IsNullOrWhiteSpace(newName))
             {
@@ -126,7 +123,6 @@ namespace EventsManager
                 {
                     int myId = Session.CurrentUser.ID;
 
-                    // защищаемся: редактировать можно только свои активности [file:4]
                     var act = await db.Активности.FirstOrDefaultAsync(a => a.ID == _selected.ID && a.Moderator == myId);
                     if (act == null)
                     {
