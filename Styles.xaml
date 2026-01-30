@@ -70,11 +70,6 @@
         </Setter>
     </Style>
 
-
-
-
-
-
     <Style TargetType="{x:Type TextBox}">
         <Setter Property="FontFamily" Value="Comic Sans MS"/>
         <Setter Property="Padding" Value="8,6"/>
