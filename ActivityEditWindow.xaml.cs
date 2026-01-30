@@ -181,7 +181,6 @@ namespace EventsManager
 
         private int GetNextActivityId(InfoSecEventsEntities db)
         {
-            // В твоей БД ID не identity, поэтому считаем max+1 сами. [file:4]
             int maxId = 0;
             if (db.Активности.Any())
                 maxId = db.Активности.Max(x => x.ID);
