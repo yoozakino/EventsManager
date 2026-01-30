@@ -81,7 +81,6 @@ namespace EventsManager
 
             try
             {
-                // OnLoad + Freeze: чтобы не держать файл открытым
                 var bmp = new BitmapImage();
                 bmp.BeginInit();
                 bmp.CacheOption = BitmapCacheOption.OnLoad;
@@ -101,22 +100,18 @@ namespace EventsManager
         {
             photoPath = (photoPath ?? "").Trim();
             if (string.IsNullOrWhiteSpace(photoPath)) return null;
-
-            // 1) Абсолютный путь
+            
             if (Path.IsPathRooted(photoPath) && File.Exists(photoPath))
                 return photoPath;
 
-            // 2) Относительно папки приложения
             var baseDir = AppDomain.CurrentDomain.BaseDirectory;
 
             var p1 = Path.Combine(baseDir, photoPath);
             if (File.Exists(p1)) return p1;
 
-            // 3) Частый вариант: папка Images рядом с exe
             var p2 = Path.Combine(baseDir, "Images", photoPath);
             if (File.Exists(p2)) return p2;
 
-            // 4) Частый вариант: Assets/Images
             var p3 = Path.Combine(baseDir, "Assets", photoPath);
             if (File.Exists(p3)) return p3;
 
