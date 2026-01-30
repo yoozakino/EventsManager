@@ -25,7 +25,6 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Левая карточка: ДАННЫЕ -->
             <Border Grid.Column="0"
                     Background="White"
                     CornerRadius="14"
@@ -128,7 +127,6 @@
                 </Grid>
             </Border>
 
-            <!-- Правая карточка -->
             <Border Grid.Column="2"
         Background="White"
         CornerRadius="14"
@@ -195,7 +193,6 @@
 
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="Направление" Foreground="#6B7C93"/>
 
-                            <!-- ВЫСОКОЕ поле: не ставь Height="30" -->
                             <TextBox Grid.Row="0" Grid.Column="1"
                          x:Name="DirectionBox"
                          Height="80"
