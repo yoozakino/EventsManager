@@ -13,7 +13,6 @@ namespace EventsManager
             Auth.LoginSucceeded += OnLoginSucceeded;
             Auth.GuestSelected += OnGuestSelected;
 
-            // стартуем гостем, авторизация показывается оверлеем
             Session.CurrentUser = null;
             ApplyAccess();
 
@@ -64,10 +63,8 @@ namespace EventsManager
 
         private void ApplyAccess()
         {
-            // Видимость: мероприятия доступны всегда (в т.ч. гостю)
             BtnPublicEvents.Visibility = Visibility.Visible;
 
-            // Остальное — только после входа
             BtnProfile.Visibility = Session.IsAuth ? Visibility.Visible : Visibility.Collapsed;
 
             var role = RoleKey();
@@ -81,7 +78,6 @@ namespace EventsManager
             BtnJury.Visibility = (Session.IsAuth && role == "жюри")
                 ? Visibility.Visible : Visibility.Collapsed;
 
-            // НОВОЕ: Активности — только организатор
             BtnActivities.Visibility = (Session.IsAuth && (role == "организатор" || role == "организаторы"))
                 ? Visibility.Visible : Visibility.Collapsed;
 
@@ -94,7 +90,6 @@ namespace EventsManager
             BtnActivities.IsEnabled = Session.IsAuth;
         }
 
-        // Навигация
         private void BtnPublicEvents_Click(object sender, RoutedEventArgs e)
         {
             MainContent.Content = new PublicEventsPage();
@@ -124,7 +119,6 @@ namespace EventsManager
             MainContent.Content = new JuryPage();
         }
 
-        // НОВОЕ: переход на страницу управления активностями
         private void BtnActivities_Click(object sender, RoutedEventArgs e)
         {
             if (!Session.IsAuth) return;
