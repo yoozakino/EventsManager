@@ -7,11 +7,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="12"/>
-            <!-- было 340, делаем шире -->
             <ColumnDefinition Width="460"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Список активностей -->
         <Border Background="White" CornerRadius="10" Padding="12">
             <Grid>
                 <Grid.RowDefinitions>
