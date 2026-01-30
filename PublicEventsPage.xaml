@@ -9,7 +9,6 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Список мероприятий -->
         <Border Background="White" CornerRadius="10" Padding="12">
             <Grid>
                 <Grid.RowDefinitions>
@@ -31,7 +30,6 @@
                          TextChanged="SearchBox_TextChanged"
                          ToolTip="Поиск по названию"/>
 
-                <!-- Кнопки организатора -->
                 <StackPanel x:Name="OrganizerPanel"
                             Grid.Row="4"
                             Orientation="Horizontal"
@@ -49,7 +47,6 @@
             </Grid>
         </Border>
 
-        <!-- Детали -->
         <Border Grid.Column="2" Background="White" CornerRadius="10" Padding="12">
             <Grid>
                 <Grid.RowDefinitions>
